@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 20px;
   background-color: #e8ecef;
+  overflow-x: hidden;
 }
 
 main {
@@ -13,6 +14,7 @@ main {
 
 .hand {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
   margin-top: 20px;
 }
@@ -39,17 +41,19 @@ main {
 
 .tile-group {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
 .tile-group-label {
   width: 40px;
+  flex-shrink: 0;
   font-weight: bold;
 }
 
 .tile-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
 }
 

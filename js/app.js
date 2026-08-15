@@ -178,7 +178,24 @@ function renderSessionFinished() {
 }
 
 answerButton.addEventListener("click", () => {
+  // 未回答チェック
+  if (selectedTiles.size === 0) {
+    answerPreview.innerHTML = `
+      <p>受け入れ牌を選択してください。</p>
+    `;
+    return;
+  }
+
+  if (answerCountInput.value === "") {
+    answerPreview.innerHTML = `
+      <p>受け入れ枚数を入力してください。</p>
+    `;
+    return;
+  }
+
   const answerCount = Number(answerCountInput.value);
+
+  // 以下は現在の採点処理のまま
 
   const selectedTileList = [...selectedTiles];
   const correctTileList = question.acceptance.map(item => item.tile);
